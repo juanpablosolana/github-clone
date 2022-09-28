@@ -1,7 +1,7 @@
 import Layout from './components/Layout';
 import Profile from './components/Profile';
 import Filters from './components/Filters';
-import RepoList from './components/RepoList';
+import RepoList from './components/Repo-list';
 import Search from './components/Search';
 
 import './App.css';
@@ -9,10 +9,10 @@ import './App.css';
 function App() {
   return (
     <Layout>
-      <div><Profile /></div>
-      <div><Filters /></div>
-      <div><RepoList /></div>
-      <div><Search /></div>
+      <Profile />
+      <Filters />
+      <RepoList />
+      <Search />
     </Layout>
   );
 }
