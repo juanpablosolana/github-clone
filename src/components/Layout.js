@@ -1,8 +1,15 @@
-export default function Layout({ children }) {
+import styled from 'styled-components'
 
+const LayoutStyled = styled.main`
+
+`
+
+function Layout({ children }) {
   return (
-    <div>
-
-    </div>
-  );
+    <LayoutStyled>
+      {children}
+    </LayoutStyled>
+  )
 }
+
+export default Layout
