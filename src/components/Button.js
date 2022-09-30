@@ -1,4 +1,4 @@
-import {isValidElement} from 'react'
+import { isValidElement } from 'react'
 import styled from 'styled-components'
 
 const ButtonStyled = styled.button`
