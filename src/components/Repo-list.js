@@ -1,16 +1,28 @@
 import styled from 'styled-components'
+import RepoItem from './Repo-item'
 
 const RepoListStyled = styled.div`
-grid-area: repo-list;
-
+  grid-area: repo-list;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 `
 
-function RepoList() {
+function RepoList({ repoList, search }) {
+  let list = repoList
+  if (search !== '') {
+    list = list.filter((item) => {
+      return item.name.search(search) >= 0
+    })
+  }
   return (
     <RepoListStyled>
-      RepoList
+      {list.map((item) => {
+        return <RepoItem {...item} key={item.id} />
+      })}
     </RepoListStyled>
   )
 }
 
 export default RepoList
+
