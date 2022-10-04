@@ -3,6 +3,7 @@ import Profile from './components/Profile';
 import Filters from './components/Filters';
 import RepoList from './components/Repo-list';
 import Search from './components/Search';
+import RepoData from './services/repos-data';
 
 import './App.css';
 
@@ -11,7 +12,7 @@ function App() {
     <Layout>
       <Profile />
       <Filters />
-      <RepoList />
+      <RepoList repoData={RepoData} />
       <Search />
     </Layout>
   );
