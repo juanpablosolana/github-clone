@@ -1,12 +1,9 @@
 import styled from 'styled-components'
-// import props from './profile-data'
 import Button from './Button'
 import Icon from './icon'
 
 const ProfileStyled = styled.div`
   grid-area: profile;
-  /* background-color: yellow; */
-
   .avatar {
     border-radius: 50%;
     border: 1px solid var(--grey-1);
@@ -49,11 +46,8 @@ const ProfileStyled = styled.div`
 function Profile(props) {
   const { twitter_username, blog, name, login, avatar_url, bio, followers, following, location } = props
 
-
-
   return (
     <ProfileStyled>
-
       <img src={avatar_url} className='avatar' width="278" height="278" alt="" />
       <p className="name">{name}</p>
       <p className="username">{login}</p>
@@ -77,9 +71,6 @@ function Profile(props) {
       <p className="follwers info">
         • {followers} <span>followers</span> <span>•</span> {following} <span>following</span>
       </p>
-      {/* <p className="stars info">
-        • 81
-      </p> */}
       <p className="location info">
         • {location}
       </p>

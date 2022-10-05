@@ -6,6 +6,7 @@ import Search from './components/Search';
 import { useState, useEffect } from 'react'
 import { getUser, getRepos } from './services/users'
 import { useParams } from 'react-router-dom'
+import Modal from './modal'
 
 function App() {
   const params = useParams()
@@ -15,6 +16,7 @@ function App() {
   }
   const [user, setUser] = useState({})
   const [repos, setRepos] = useState([])
+  const [modal, setModal] = useState(false)
   useEffect(() => {
     getUser(username).then(({ data, isError }) => {
       if (isError) {
@@ -23,8 +25,7 @@ function App() {
       }
       setUser(data)
     })
-  }, [])
-  useEffect(() => {
+
     getRepos(username).then(({ data, isError }) => {
       if (isError) {
         console.log('no hemos encontrado los repos de este crack')
@@ -32,13 +33,14 @@ function App() {
       }
       setRepos(data)
     })
-  }, [])
+  }, [username])
   return (
     <Layout>
+      <Modal isActive={modal} setModal={setModal} />
       <Profile {...user} />
       <Filters />
       <RepoList repoList={repos} />
-      <Search />
+      <Search setModal={setModal} />
     </Layout>
   )
 
