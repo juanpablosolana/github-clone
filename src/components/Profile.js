@@ -77,9 +77,11 @@ function Profile(props) {
       <a className="info" href={blog} target="_blank" rel="noreferrer">
         {blog}
       </a>
-      <a className="info" href={`https://twitter.com/${twitter_username}`} target="_blank" rel="noreferrer">
-        @{twitter_username}
-      </a>
+      {twitter_username
+        ? <a className="info" href={`https://twitter.com/${twitter_username}`} target="_blank" rel="noreferrer">
+          @{twitter_username}
+        </a>
+        : null}
     </ProfileStyled>
   )
 }
