@@ -4,7 +4,8 @@ const LayoutStyled = styled.main`
    min-block-size: 100vh;
    margin: auto;
    padding-inline: 20px;
-   max-inline-size: 75rem; // 1200px
+   max-inline-size: 75rem;
+   padding-block: 2.5rem;
    @media screen and (min-width: 768px) {
      display: grid;
      grid-template-columns: 278px 1fr;
