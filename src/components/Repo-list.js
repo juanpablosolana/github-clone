@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import RepoItem from './Repo-item'
+import NoRepos from './No-repos'
 
 const RepoListStyled = styled.div`
   grid-area: repo-list;
@@ -10,6 +11,10 @@ const RepoListStyled = styled.div`
 
 function RepoList({ repoList, search, filterOption }) {
   let list = repoList
+
+  if (list.length === 0) {
+    return <NoRepos />
+  }
 
   if (filterOption !== '') {
     list = list.filter((item) => {

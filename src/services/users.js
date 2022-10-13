@@ -1,5 +1,3 @@
-
-
 const BASE_API = 'https://api.github.com'
 
 async function fetchWrapper(url, options) {
