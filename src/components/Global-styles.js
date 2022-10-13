@@ -31,6 +31,15 @@ body {
     font:var(--body1-regular);
     margin:0;
 }
+@media screen and (prefers-color-scheme: light) {
+  :root{
+    --white: #141414;
+    --black: #fffffe ;
+    --grey: #8b949e;
+    --bg: #f6f8fa;
+    --buttonBG: #e1e4e8;
+  }
+}
 `
 
 export default GlobalStylesStyled
