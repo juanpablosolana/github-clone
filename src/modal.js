@@ -63,7 +63,6 @@ function ModalContent({ setModal }) {
   function handleSubmit(event) {
     event.preventDefault()
     const formData = new FormData(form.current)
-    console.log(formData.get('username'))
     navigator(`/${formData.get('username')}`)
     setModal(false)
   }
